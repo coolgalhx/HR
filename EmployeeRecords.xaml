@@ -1,0 +1,32 @@
+﻿<Window x:Class="HR_Management_System.EmployeeRecords"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HR_Management_System"
+        mc:Ignorable="d"
+        Title="EmployeeRecords" Height="571" Width="1041">
+    <Grid Margin="151,112,106,79">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="1010*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox HorizontalAlignment="Left" Margin="10,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtfirstname" Height="18" Grid.ColumnSpan="3"/>
+        <TextBox HorizontalAlignment="Left" Margin="369,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtlastname" Grid.Column="2" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="172,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtdob" Grid.Column="2" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,124,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtcontactinformation" Height="18" Grid.ColumnSpan="3"/>
+        <TextBox HorizontalAlignment="Left" Margin="12,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtjobtitle" Height="18" Grid.ColumnSpan="3"/>
+        <TextBox HorizontalAlignment="Left" Margin="172,124,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtdepartment" Grid.Column="2" Height="18"/>
+        <TextBox HorizontalAlignment="Left" Margin="172,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtemploymenttype" Grid.Column="2" Height="18"/>
+        <DataGrid d:ItemsSource="{Binding Source=Employee}" Margin="-148,221,-104,-76" AutoGenerateColumns="True" Grid.ColumnSpan="3" Name="datagridloademployees"/>
+        <Button Grid.Column="2" Content="Button" HorizontalAlignment="Left" Margin="249,0,0,0" VerticalAlignment="Center" Height="35" Width="196" Click="btnEnter_Click" Name="btnEnter"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="369,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtemployeeidERpg" Height="18"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="81,-81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="475" Height="37" Name="txtsearchbar"/>
+        <Button Grid.Column="2" Content="Go" HorizontalAlignment="Left" Margin="593,-81,0,0" VerticalAlignment="Top" Height="39" Width="99" Click="btnGo_Click" Name="btngo"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="572,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtnationalinsurance"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="572,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtcity" />
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Margin="369,124,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtaddress"/>
+
+    </Grid>
+</Window>

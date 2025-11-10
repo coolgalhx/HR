@@ -1,0 +1,14 @@
+﻿<Window x:Class="HR_Management_System.PayrollPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HR_Management_System"
+        mc:Ignorable="d"
+        Title="PayrollPage" Height="450" Width="800">
+    <Grid>
+
+        <DataGrid x:Name="datagridpayroll" ItemsSource="{Binding Payroll}" AutoGenerateColumns="True" MouseDoubleClick="PayrollDataGrid_MouseDoubleClick" Margin="36,42,81,61"/>
+
+    </Grid>
+</Window>
