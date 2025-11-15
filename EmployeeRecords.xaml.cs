@@ -75,11 +75,11 @@ namespace HR_Management_System
 
         }
 
-        private void btnGo_Click(object sender, RoutedEventArgs e)
+        private void btnGo_Click(object sender, RoutedEventArgs e, KeyEventArgs l)
         {
             string search = txtsearchbar.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(search))
+            if (string.IsNullOrWhiteSpace(search) && l.Key == Key.Enter)
             {
                 MessageBox.Show("Enter text to search");
                 return;
