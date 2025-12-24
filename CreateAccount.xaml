@@ -5,14 +5,145 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HR_Management_System"
         mc:Ignorable="d"
-        Title="CreateAccount" Height="450" Width="800">
-    <Grid>
-        
-        <TextBox HorizontalAlignment="Left" Margin="84,149,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="120" Name="txtusernameAEpg"/>
-        <TextBox HorizontalAlignment="Left" Margin="84,88,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120" Name="txtpasswordAEpg"/>
-        <TextBox HorizontalAlignment="Left" Margin="84,212,0,0" TextWrapping="Wrap" Text="Role" VerticalAlignment="Top" Width="120" Name="txtrole"/>
-        <Button Content="Enable" HorizontalAlignment="Left" Margin="292,113,0,0" VerticalAlignment="Top" Height="26" Width="176" Name="btnenable" Click="btnEnable_Click"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,258,0,0" AutoGenerateColumns="True" x:Name="datagridcreateaccount"/>
+        Title="Create Account"
+        Height="450"
+        Width="800"
+        Background="#F3F6FB">
 
+    <Window.Resources>
+        <!-- Label style -->
+        <Style x:Key="FormLabel" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="#34495E"/>
+            <Setter Property="Margin" Value="0,0,0,6"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+
+        <!-- TextBox style -->
+        <Style x:Key="FormTextBox" TargetType="TextBox">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="#D0D7E2"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <!-- Button style -->
+        <Style x:Key="PrimaryButton" TargetType="Button">
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="14,6"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#3498DB"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.92"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.55"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,14">
+            <TextBlock Text="Create Account"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       Foreground="#2C3E50"/>
+            <TextBlock Text="Add a new user and assign a role."
+                       FontSize="13"
+                       Foreground="#6B7C93"
+                       Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <!-- Form Card -->
+        <Border Grid.Row="1"
+                Background="White"
+                CornerRadius="14"
+                BorderBrush="#22000000"
+                BorderThickness="1"
+                Padding="18"
+                Margin="0,0,0,16">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Username -->
+                <StackPanel Grid.Column="0" Margin="0,0,14,0">
+                    <TextBlock Text="Username" Style="{StaticResource FormLabel}"/>
+                    <TextBox x:Name="txtusernameAEpg"
+                             Style="{StaticResource FormTextBox}"/>
+                </StackPanel>
+
+                <!-- Password (kept TextBox to match your code; consider PasswordBox later) -->
+                <StackPanel Grid.Column="1" Margin="0,0,14,0">
+                    <TextBlock Text="Password" Style="{StaticResource FormLabel}"/>
+                    <TextBox x:Name="txtpasswordAEpg"
+                             Style="{StaticResource FormTextBox}"/>
+                </StackPanel>
+
+                <!-- Role + Button -->
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Role" Style="{StaticResource FormLabel}"/>
+                    <DockPanel LastChildFill="False">
+                        <TextBox x:Name="txtrole"
+                                 Style="{StaticResource FormTextBox}"
+                                 Width="170"
+                                 DockPanel.Dock="Left"
+                                 Margin="0,0,10,0"/>
+                        <Button x:Name="btnenable"
+                                Content="Enable"
+                                Style="{StaticResource PrimaryButton}"
+                                Width="120"
+                                Click="btnEnable_Click"/>
+                    </DockPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- DataGrid Section -->
+        <Border Grid.Row="2"
+                Background="White"
+                CornerRadius="14"
+                BorderBrush="#22000000"
+                BorderThickness="1"
+                Padding="12">
+            <DataGrid x:Name="datagridcreateaccount"
+                      AutoGenerateColumns="True"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="None"
+                      RowBackground="White"
+                      AlternatingRowBackground="#F7FAFF"
+                      Margin="0"/>
+        </Border>
     </Grid>
 </Window>
+

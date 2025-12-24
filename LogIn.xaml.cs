@@ -34,7 +34,7 @@ namespace HR_Management_System
         {  
             //placeholders for the username and password
             string username = txtemployeeidLIpg.Text;
-            string password = txtpassword.Text;
+            string password = txtpassword.Password;
 
             using (var db = new MainDatabaseContext())
             {
@@ -60,11 +60,13 @@ namespace HR_Management_System
                     }
                     if(employee.Role=="Admin")
                     {
-                       //admin dashboard 
+                        MainWindow mm = new MainWindow();
+                        mm.Show();
                     }
                     else 
                     {
-                        //employee dashboard
+                        MainWindow mm = new MainWindow();
+                        mm.Show();
                     }
 
 

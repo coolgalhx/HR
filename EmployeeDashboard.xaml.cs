@@ -26,7 +26,9 @@ namespace HR_Management_System
         }
 
 
-        private void txtgodash_TextChanged(object sender, TextChangedEventArgs e)
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             string search = txtgodash.Text.Trim();
 
@@ -56,7 +58,6 @@ namespace HR_Management_System
                 }
 
                 //populate txt boxes
-
             }
         }
     }

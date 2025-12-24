@@ -75,11 +75,11 @@ namespace HR_Management_System
 
         }
 
-        private void btnGo_Click(object sender, RoutedEventArgs e, KeyEventArgs l)
+        private void btnGo_Click(object sender, RoutedEventArgs e)
         {
             string search = txtsearchbar.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(search) && l.Key == Key.Enter)
+            if (string.IsNullOrWhiteSpace(search) )
             {
                 MessageBox.Show("Enter text to search");
                 return;
@@ -109,6 +109,8 @@ namespace HR_Management_System
                 datagridloademployees.ItemsSource = null;
                 datagridloademployees.ItemsSource = employeeFromDb;
             }
-        }  
+        }
+
+        
     }
 }

@@ -20,5 +20,17 @@ namespace HR_Management_System
         {
             InitializeComponent();
         }
+
+        private void admin_dashboard_Click(object sender, RoutedEventArgs e)
+        {
+            CreateAccount ca= new CreateAccount();
+            ca.Show();
+        }
+
+        private void employee_dashboard_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeDashboard employeeDashboard = new EmployeeDashboard();
+            employeeDashboard.Show();
+        }
     }
 }

@@ -4,28 +4,69 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HR_Management_System"
-        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
-        Title="LogIn" Height="450" Width="800">
+        mc:Ignorable="d"
+        Title="Log In"
+        Height="446"
+        Width="685"
+        WindowStartupLocation="CenterScreen"
+        Background="#F3F6FB">
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="1.5"/>
-        </Grid.ColumnDefinitions>
+        <Border Width="360"
+                Padding="24"
+                Background="White"
+                CornerRadius="10"
+                BorderBrush="#DDD"
+                BorderThickness="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
 
-        <Border CornerRadius="10,0,0,10" Margin="6,-10,4,10">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#3AA9AD" Offset="0"/>
-                    <GradientStop Color="#3AA9AD" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <Button Content="Submit" Margin="438,202,206,160" Name="btnsubmit" Click="btnSubmit_Click"/>
+            <StackPanel>
+                <!-- Title -->
+                <TextBlock Text="HR Management System"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Foreground="#2C3E50"
+                           HorizontalAlignment="Center"/>
+
+                <TextBlock Text="Log in to continue"
+                           FontSize="13"
+                           Foreground="#6B7C93"
+                           Margin="0,6,0,20"
+                           HorizontalAlignment="Center"/>
+
+                <!-- Employee ID -->
+                <TextBlock Text="Employee ID"
+                           FontSize="13"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,6"/>
+                <TextBox x:Name="txtemployeeidLIpg"
+                         Height="34"
+                         Margin="0,0,0,14"/>
+
+                <!-- Password -->
+                <TextBlock Text="Password"
+                           FontSize="13"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,6"/>
+                <PasswordBox x:Name="txtpassword"
+                             Height="34"
+                             Margin="0,0,0,20"/>
+
+                <!-- Submit -->
+                <Button x:Name="btnsubmit"
+                        Content="Log In"
+                        Height="38"
+                        FontSize="14"
+                        FontWeight="SemiBold"
+                        Background="#2C98A0"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="btnSubmit_Click"/>
+
+            </StackPanel>
         </Border>
-
-        
-        <TextBox TextWrapping="Wrap" Text=" " Margin="424,302,140,127" Grid.Column="0" Name="txtemployeeidLIpg"/>
-
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1"/>
-        <TextBox TextWrapping="Wrap" Text=" " Margin="424,351,140,78" Grid.Column="0" Name="txtpassword"/>
     </Grid>
 </Window>
+

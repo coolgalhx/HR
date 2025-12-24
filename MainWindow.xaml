@@ -5,8 +5,87 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HR_Management_System"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="HR Management System"
+        Height="450"
+        Width="800"
+        Background="#F3F6FB">
 
+    <Window.Resources>
+        <Style x:Key="MenuButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="52"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="14,8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.92"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Opacity" Value="0.85"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.55"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Border Background="White"
+                CornerRadius="16"
+                BorderBrush="#22000000"
+                BorderThickness="1"
+                Padding="24"
+                Width="420"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+            <StackPanel>
+                <TextBlock Text="Main Menu"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Foreground="#2C3E50"
+                           HorizontalAlignment="Center"/>
+
+                <TextBlock Text="Choose a dashboard to continue"
+                           FontSize="13"
+                           Foreground="#6B7C93"
+                           Margin="0,6,0,18"
+                           HorizontalAlignment="Center"/>
+
+                <!-- Employee Dashboard -->
+                <Button x:Name="employee_dashboard"
+                        Content="Employee Dashboard"
+                        Style="{StaticResource MenuButtonStyle}"
+                        Background="#2ECC71"
+                        Margin="0,0,0,12" Click="employee_dashboard_Click"/>
+
+                <!-- HR Manager Dashboard -->
+                <Button x:Name="HR_manager_dashboard"
+                        Content="HR Manager Dashboard"
+                        Style="{StaticResource MenuButtonStyle}"
+                        Background="#9B59B6"
+                        Margin="0,0,0,12"/>
+
+                <!-- Admin Dashboard -->
+                <Button x:Name="admin_dashboard"
+                        Content="Admin Dashboard"
+                        Style="{StaticResource MenuButtonStyle}"
+                        Background="#E67E22" Click="admin_dashboard_Click"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
